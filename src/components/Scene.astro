@@ -1,0 +1,32 @@
+---
+// Scene.astro — alternating editorial image+prose block.
+// Pass an image src (string from /public/images/...) and props.
+interface Props {
+  src: string;
+  alt: string;
+  eyebrow?: string;
+  scriptLine?: string;
+  title: string;
+  caption?: string;
+  reverse?: boolean;
+  reveal?: boolean;
+}
+const { src, alt, eyebrow, scriptLine, title, caption, reverse = false, reveal = true } = Astro.props;
+---
+<section class={`scene ${reverse ? 'scene--reverse' : ''}`} data-reveal={reveal ? '' : null}>
+  <figure class="scene__media">
+    <img src={src} alt={alt} loading="lazy" decoding="async" />
+    {caption && <figcaption class="scene__caption">{caption}</figcaption>}
+  </figure>
+  <div class="scene__body">
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    <h2 class="scene__title">
+      {scriptLine && <span class="script">{scriptLine}</span>}
+      {title}
+    </h2>
+    <hr class="divider" />
+    <div class="scene__prose">
+      <slot />
+    </div>
+  </div>
+</section>

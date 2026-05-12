@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Impressum — alm44';
+const description = 'Rechtliche Informationen, Angaben gemäß § 5 TMG.';
+---
+<Base title={title} description={description}>
+  <section class="section section--lg">
+    <div class="wrap--text legal" data-reveal>
+      <span class="eyebrow">Impressum</span>
+      <h1 style="font-size: var(--t-h1); margin-top: var(--space-sm);">
+        <span class="script" style="display:block; font-size: 1.1em; line-height: 1;">unser</span>
+        Impressum.
+      </h1>
+
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        Annette Payr<br />
+        Prof.-Kurt-Huber-Str. 12a<br />
+        D-82166 Gräfelfing
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href="tel:+4917672126684" class="link">+49 176 72126684</a><br />
+        E-Mail: <a href="mailto:falkertsee13@gmx.at" class="link">falkertsee13@gmx.at</a>
+      </p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+        ATU77192002
+      </p>
+
+      <h2>EU-Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur
+        Online-Streitbeilegung (OS) bereit:
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" class="link">https://ec.europa.eu/consumers/odr/</a>.
+        <br />Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      </p>
+
+      <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+        vor einer Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h2>Bildrechte / Bildnachweise</h2>
+      <p>
+        Dipl. Fotodesignerin Silvia Béres
+        (<a href="https://beresfotografie.de/" target="_blank" rel="noopener" class="link">beresfotografie.de</a>)
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal h1 { margin-bottom: var(--space-lg); }
+  .legal h2 {
+    font-size: var(--t-h3);
+    font-style: italic;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+  .legal p {
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+  }
+  .legal p + h2 { margin-top: var(--space-xl); }
+</style>

@@ -1,0 +1,298 @@
+---
+import Base from '../layouts/Base.astro';
+import Scene from '../components/Scene.astro';
+
+const title = 'alm44 — kleine Hütte mit großem Blick · Außerteuchen, Kärnten';
+const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes Quellwasser, Feuerschale, Sonnenterrasse. Mitten in Kärnten zwischen Seen und Bergen.';
+---
+<Base title={title} description={description} navTransparent>
+  <!-- Hero ─────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="/images/hero-home.jpg" alt="Sonnenuntergang von der Terrasse der alm44 — goldenes Tal, Kärntner Berge im Hintergrund" />
+    </div>
+    <div class="hero__inner">
+      <div></div>
+      <div>
+        <h1 class="hero__title">
+          <span class="script">eine kleine Hütte</span><br />
+          mit großem Blick.
+        </h1>
+        <div class="hero__meta">
+          <span>alm44 · Außerteuchen · Kärnten</span>
+          <span>Alpen meets Boho</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro ────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap--text" data-reveal>
+      <span class="eyebrow">Willkommen</span>
+      <p class="lead" style="margin-top: var(--space-md)">
+        Eine alte Almhütte, frisch renoviert. Drei Schlafräume, sechs Betten,
+        ein kleines feines Retrobad. Draußen eine große Sonnenterrasse, ein
+        Garten mit eigenem Quellwasser, eine Feuerschale für lange Abende.
+      </p>
+      <p style="margin-top: 1.2em">
+        Die alm44 liegt am Berg über Außerteuchen, oberhalb des Ossiachersees —
+        hoch genug, dass die Tage langsamer werden, aber nah genug, dass die
+        Karawanken und die Kärntner Seen in einer halben Stunde erreichbar sind.
+        Ein Ort zum Auftauchen, nicht zum Abhaken.
+      </p>
+    </div>
+  </section>
+
+  <!-- Wohnen ───────────────────────────────────────────────────────── -->
+  <div class="wrap">
+    <Scene
+      src="/images/wohnen-kachelofen.jpg"
+      alt="Kachelofen mit Schaffell-Schaukelstuhl und bemalter Bauerntür im Wohnraum der alm44"
+      eyebrow="Wohnen"
+      scriptLine="der Ofen"
+      title="der Mittelpunkt der Stube."
+      caption="Glasierte Kacheln, Schaffell, Eames-Rocker"
+      reverse
+    >
+      <p>
+        Im Zentrum der Hütte steht ein alter Kachelofen — glasiert, schwer,
+        stillschweigend warm. Davor ein Schaukelstuhl mit Schaffell, daneben
+        eine bemalte Bauerntür, die irgendwann in einem anderen Leben
+        irgendwo anders gehängt hat.
+      </p>
+      <p>
+        Wenn es draußen kühl wird, ist das hier der Platz, an den man
+        zurückkehrt — mit einem Buch, einem Glas, oder einfach mit dem
+        Geräusch des Holzes.
+      </p>
+    </Scene>
+
+    <Scene
+      src="/images/stube.jpg"
+      alt="Esstisch mit alten Bauernstühlen, Bank und kleinen Stillleben in der Stube der alm44"
+      eyebrow="Stube"
+      title="ein Tisch, an dem man bleibt."
+    >
+      <p>
+        Der Tisch ist alt, das Holz dunkel, an den Wänden hängen kleine
+        Stillleben. Eine schwarze Pendelleuchte über dem Ganzen.
+      </p>
+      <p>
+        Hier werden lange Frühstücke serviert, Karten gespielt, Gespräche
+        geführt, die sonst keinen Platz finden.
+      </p>
+    </Scene>
+
+    <Scene
+      src="/images/kueche.jpg"
+      alt="Schwarze Küchenzeile mit Induktion und Backofen, alter Bauernregal mit Geschirr im Hintergrund"
+      eyebrow="Küche"
+      scriptLine="alt trifft neu"
+      title="kochen, in Ruhe."
+      reverse
+    >
+      <p>
+        Die Küche ist neu, sachlich, schwarz — Induktion, Backofen,
+        Filterkaffee. Über der Anrichte: ein altes Wandregal mit bemaltem
+        Geschirr und einem Krug voll Wiesenblumen.
+      </p>
+      <p>
+        Klein, aber fein. Genug für lange Frühstücke, kurze Abendessen und
+        alles dazwischen.
+      </p>
+    </Scene>
+
+    <!-- Pull quote ─────────────────────────────────────────────────── -->
+    <div class="pullquote" data-reveal>
+      <span class="script">Alpen meets Boho</span>
+      <p class="eyebrow" style="margin-top: var(--space-sm)">mit Retroflair</p>
+    </div>
+
+    <Scene
+      src="/images/schlafen-doppelbett.jpg"
+      alt="Doppelbett mit Leinenbezug, Bauernbild und Reispapierlampe im Hauptschlafzimmer der alm44"
+      eyebrow="Schlafen · 1"
+      title="Drei Räume, sechs Betten."
+    >
+      <p>
+        Drei Schlafzimmer auf zwei Etagen — ein Doppelbett im warmen
+        Hauptschlafzimmer, ein Stockbett für die Kinder oder die jungen
+        Gebliebenen, und ein Ausziehbett im Atelierzimmer mit der bemalten
+        Truhe.
+      </p>
+      <p>
+        Bettwäsche, Leinen, dichte Vorhänge, Morgensonne durchs kleine
+        Fenster. Mehr braucht es nicht.
+      </p>
+    </Scene>
+
+    <Scene
+      src="/images/schlafen-truhe.jpg"
+      alt="Bemalte Bauerntruhe mit Olympia-Schreibmaschine und kleiner Rosenstillleben in einem Schlafraum"
+      eyebrow="Schlafen · 2"
+      scriptLine="kleine Schätze"
+      title="alte Möbel, neue Geschichten."
+      reverse
+    >
+      <p>
+        Eine bemalte Bauerntruhe, eine alte Olympia-Schreibmaschine, ein
+        Stillleben mit Rosen — die Räume sind nicht gestylt, sie sind
+        gewachsen.
+      </p>
+      <p>
+        Vieles in der Hütte hat schon einmal woanders gelebt, bevor es
+        hier seinen Platz fand.
+      </p>
+    </Scene>
+
+    <Scene
+      src="/images/schlafen-stockbett.jpg"
+      alt="Stockbett mit hellem Holzgestell und alter Bauernstuhl im Kinderzimmer der alm44"
+      eyebrow="Schlafen · 3"
+      title="ein Stockbett mit Aussicht."
+    >
+      <p>
+        Im dritten Raum ein Stockbett — Holz, hell, mit einem alten
+        Bauernstuhl daneben und einem Fenster ins Grüne.
+      </p>
+    </Scene>
+
+    <Scene
+      src="/images/bad.jpg"
+      alt="Kleines Retrobad mit Steinwaschbecken, gemustertem Wandfliesen und runden Holzspiegel"
+      eyebrow="Bad"
+      scriptLine="kleines feines"
+      title="Retrobad."
+      reverse
+    >
+      <p>
+        Ein einziges Bad, klein, mit Charakter — gemusterte Wandfliesen,
+        Terrakottaboden, Steinwaschbecken, runder Holzspiegel.
+      </p>
+      <p>
+        Genug für sechs Menschen, wenn man freundlich teilt.
+      </p>
+    </Scene>
+  </div>
+
+  <!-- Outdoor section ───────────────────────────────────────────────── -->
+  <section class="section section--lg" style="background: var(--c-paper-soft);">
+    <div class="wrap">
+      <header class="section__header" style="text-align: center; margin-bottom: var(--space-lg);" data-reveal>
+        <span class="eyebrow">Draußen</span>
+        <h2 style="font-size: var(--t-h1); margin-top: var(--space-sm);">
+          <span class="script" style="display:block; font-size: 0.9em; line-height: 1;">unter freiem</span>
+          Himmel.
+        </h2>
+      </header>
+
+      <Scene
+        src="/images/terrasse.jpg"
+        alt="Sonnenterrasse mit Holzdach, Blick über das goldene Tal bei Sonnenuntergang"
+        eyebrow="Terrasse"
+        title="ein Platz für lange Abende."
+      >
+        <p>
+          Die große Sonnenterrasse blickt nach Süden — über die Wälder von
+          Außerteuchen hinweg, an klaren Tagen bis zu den Karawanken.
+        </p>
+        <p>
+          Esstisch unter dem Holzdach, Bank, ein Acapulco-Stuhl. Frühstück
+          in der Morgensonne, Wein zum Abendrot.
+        </p>
+      </Scene>
+
+      <Scene
+        src="/images/feuerschale.jpg"
+        alt="Zwei Personen sitzen auf einer Bank vor der Feuerschale und blicken auf die abendlichen Berge"
+        eyebrow="Feuerschale"
+        scriptLine="Lagerfeuerromantik"
+        title="wenn der Tag leiser wird."
+        caption="Holz, Feuer, Berge. In der Reihenfolge."
+        reverse
+      >
+        <p>
+          Eine Feuerschale auf der Wiese, eine Bank, der Blick auf den
+          Talgrund. Wenn die Sonne hinter den Hängen verschwindet, brennt
+          das Feuer noch eine Weile weiter.
+        </p>
+      </Scene>
+
+      <Scene
+        src="/images/quellwasser.jpg"
+        alt="Faltbarer Eisbadezuber im Garten der alm44 mit Blick auf die bewölkten Berge"
+        eyebrow="Quellwasser"
+        title="zum Plantschen oder Eisbaden."
+      >
+        <p>
+          Auf dem Grund der Hütte entspringt eine eigene Quelle. Wir füllen
+          damit den Badezuber im Garten — im Sommer angenehm kühl, in der
+          Übergangszeit ehrlich kalt.
+        </p>
+        <p>
+          Wer einmal um sechs Uhr morgens im Quellwasser sitzt und den
+          Nebel abziehen sieht, versteht, warum manche Gäste deshalb
+          wiederkommen.
+        </p>
+      </Scene>
+
+      <Scene
+        src="/images/haengesessel.jpg"
+        alt="Schwarzer Hängesessel zwischen zwei alten Apfelbäumen in der Wiese"
+        eyebrow="Garten"
+        scriptLine="zwischen den Bäumen"
+        title="ein Hängesessel, eine Wiese."
+        reverse
+      >
+        <p>
+          Zwei alte Bäume, ein Hängesessel dazwischen, eine Wiese, die im
+          Mai nach Lavendel riecht. Manchmal kommt eine Kuh vorbei.
+        </p>
+      </Scene>
+    </div>
+  </section>
+
+  <!-- Atelier teaser ────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap--text" data-reveal style="text-align: center;">
+      <span class="eyebrow">Neu ab Juni 2026</span>
+      <h2 style="font-size: var(--t-h2); margin-top: var(--space-sm);">
+        <span class="script" style="display:block; font-size: 1.1em;">der Atelierraum</span>
+        ein Ort für eigene Projekte.
+      </h2>
+      <p class="lead" style="margin-top: var(--space-md); margin-inline: auto;">
+        Ab Sommer 2026 öffnet auf der alm44 ein eigener Atelierraum für
+        kreative Projekte — zum Schreiben, Malen, Werken, Stillsein. Mehr
+        Informationen folgen in Kürze.
+      </p>
+    </div>
+  </section>
+
+  <!-- Detail mood gallery ────────────────────────────────────────────── -->
+  <section class="section section--sm">
+    <div class="wrap--wide" data-reveal>
+      <div class="gallery">
+        <img src="/images/detail-tuer.jpg" alt="Bemalte Bauerntür mit floralem Muster" />
+        <img src="/images/detail-kommode.jpg" alt="Vintage Kommode mit Messing-Wandlampe auf schwarzer Holzlamellenwand" />
+        <img src="/images/detail-typewriter.jpg" alt="Alte Olympia-Schreibmaschine auf bemalter Bauerntruhe" />
+        <img src="/images/detail-bank.jpg" alt="Holzbank mit Krug voller Wiesenblumen vor Holzlamellenwand" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA ─────────────────────────────────────────────────────────────── -->
+  <section class="section section--lg" style="text-align: center;">
+    <div class="wrap--text" data-reveal>
+      <span class="script" style="font-size: clamp(2.5rem, 5vw + 1rem, 5rem); display: block;">bleib eine Weile.</span>
+      <p class="lead" style="margin-top: var(--space-md);">
+        Mindestaufenthalt vier Nächte. Ab sieben, zehn oder vierzehn Nächten
+        wird's günstiger. Endreinigung, Bettwäsche, Handtücher und Strom
+        sind im Preis enthalten.
+      </p>
+      <p style="margin-top: var(--space-lg);">
+        <a href="/buchung/" class="btn">Verfügbarkeit · Preise</a>
+      </p>
+    </div>
+  </section>
+</Base>

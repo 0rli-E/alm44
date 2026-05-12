@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Datenschutz — alm44';
+const description = 'Datenschutzerklärung der alm44.';
+---
+<Base title={title} description={description}>
+  <section class="section section--lg">
+    <div class="wrap--text legal" data-reveal>
+      <span class="eyebrow">Datenschutz</span>
+      <h1 style="font-size: var(--t-h1); margin-top: var(--space-sm);">
+        <span class="script" style="display:block; font-size: 1.1em; line-height: 1;">unser Umgang mit</span>
+        deinen Daten.
+      </h1>
+
+      <p class="lead" style="margin-top: var(--space-md);">
+        Diese Website verarbeitet so wenige personenbezogene Daten wie
+        möglich. Es gibt kein Tracking, keine Marketing-Cookies, keine
+        Werbenetzwerke.
+      </p>
+
+      <h2>Verantwortlich</h2>
+      <p>
+        Annette Payr<br />
+        Prof.-Kurt-Huber-Str. 12a<br />
+        D-82166 Gräfelfing<br />
+        E-Mail: <a href="mailto:falkertsee13@gmx.at" class="link">falkertsee13@gmx.at</a>
+      </p>
+
+      <h2>Server-Logfiles</h2>
+      <p>
+        Der Webhost erhebt automatisch Informationen, die der Browser
+        übermittelt — IP-Adresse, Datum und Uhrzeit, Referrer-URL,
+        verwendeter Browser, Betriebssystem. Diese Daten sind technisch
+        notwendig zur Auslieferung der Seite und werden nach kurzer Zeit
+        wieder gelöscht. Eine Zusammenführung mit anderen Datenquellen
+        findet nicht statt.
+      </p>
+
+      <h2>Kontaktformular & E-Mail</h2>
+      <p>
+        Wenn du uns per Formular oder per E-Mail Anfragen zukommen lässt,
+        werden deine Angaben (Name, E-Mail, Anreise/Abreise-Daten,
+        Nachricht) zur Bearbeitung der Anfrage und für den Fall von
+        Rückfragen gespeichert. Diese Daten geben wir nicht ohne deine
+        Einwilligung weiter und löschen sie, sobald die Anfrage erledigt
+        ist und keine gesetzlichen Aufbewahrungsfristen entgegenstehen.
+      </p>
+
+      <h2>Buchungstool (Smoobu)</h2>
+      <p>
+        Sobald das Smoobu-Buchungstool eingebunden ist, gelten zusätzlich
+        die Datenschutzbestimmungen von Smoobu GmbH. Beim Aufruf der
+        Buchungs-Seite kann eine Verbindung zu Smoobu-Servern hergestellt
+        werden. Mehr dazu auf
+        <a href="https://www.smoobu.com/de/datenschutz/" target="_blank" rel="noopener" class="link">smoobu.com/datenschutz</a>.
+      </p>
+
+      <h2>Externe Links</h2>
+      <p>
+        Diese Website verlinkt zu externen Diensten (Instagram, Google
+        Maps, beresfotografie.de). Beim Klick auf solche Links verlässt
+        du diese Seite und es gelten die Datenschutzbestimmungen der
+        jeweiligen Anbieter.
+      </p>
+
+      <h2>Deine Rechte</h2>
+      <p>
+        Du hast jederzeit das Recht auf Auskunft, Berichtigung, Löschung
+        oder Einschränkung der Verarbeitung deiner gespeicherten Daten.
+        Schreib uns dazu an
+        <a href="mailto:falkertsee13@gmx.at" class="link">falkertsee13@gmx.at</a>.
+      </p>
+
+      <p style="margin-top: var(--space-lg); color: var(--c-ink-mute); font-size: 0.9rem;">
+        <strong>Hinweis:</strong> Diese Datenschutzerklärung ist ein
+        Entwurf. Vor Veröffentlichung sollte sie auf den finalen Webhost,
+        die genaue Buchungs-Integration und etwaige weitere eingebettete
+        Dienste angepasst werden.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .legal h1 { margin-bottom: var(--space-lg); }
+  .legal h2 {
+    font-size: var(--t-h3);
+    font-style: italic;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+  .legal p {
+    color: var(--c-ink-soft);
+    line-height: 1.8;
+  }
+  .legal p + h2 { margin-top: var(--space-xl); }
+</style>

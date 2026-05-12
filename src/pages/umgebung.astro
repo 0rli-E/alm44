@@ -1,0 +1,160 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Umgebung — alm44 · Kärnten zwischen Seen und Bergen';
+const description = 'Ossiachersee, Falkertsee, Gerlitzen, Kletterwald, Therme. Was sich rund um die alm44 in einer halben Stunde erreichen lässt.';
+
+// Each entry: a short editorial scene about a place near the hut.
+// Distances are approximate driving distances from Außerteuchen 44.
+const places = [
+  {
+    eyebrow: '10 Minuten talwärts',
+    scriptLine: 'der See',
+    title: 'Ossiachersee.',
+    body: [
+      'Der nächstgelegene Badesee — lang, warm, sanft. Im Sommer ein Klassiker, im Mai noch leer, im September oft am schönsten.',
+      'Wer mag: vom Nordufer am Stiftsweg entlang nach Ossiach. Café Stift bei der alten Klostermauer ist eine ehrliche Adresse für eine Pause mit Eis.',
+    ],
+  },
+  {
+    eyebrow: 'direkt vor der Tür',
+    scriptLine: 'zu Fuß',
+    title: 'Wandern.',
+    body: [
+      'Die Wege beginnen am Gartentor. Eine kleine Runde geht in vierzig Minuten über die Wiesen oberhalb der Hütte und wieder zurück.',
+      'Wer länger laufen will: Richtung Magdalensberg oder hinauf in die Nockberge. Wir legen Karten und Empfehlungen aus.',
+    ],
+  },
+  {
+    eyebrow: '30 Minuten in die Berge',
+    scriptLine: 'höher hinauf',
+    title: 'Falkertsee.',
+    body: [
+      'Ein kleiner Bergsee in den Nockbergen, knapp 1.900 Meter hoch. Familienfreundlich, im Sommer angenehm kühl zum Schwimmen, im Winter eine ruhige Skihütten-Region.',
+      'Tipp: Die Falkert-Almhütte am Seeufer — die Kasnudeln sind ehrlich gemacht.',
+    ],
+  },
+  {
+    eyebrow: '20 Minuten · Bergbahn',
+    scriptLine: 'der Hausberg',
+    title: 'Gerlitzen Alpe.',
+    body: [
+      'Auf 1.911 Meter über dem Ossiachersee — im Sommer Wandern, Mountainbike und Paragleiten, im Winter ein überschaubares Skigebiet ohne Großstadt-Gedränge.',
+      'Sonnenuntergang vom Gipfel: einer der schönsten Plätze der Region.',
+    ],
+  },
+  {
+    eyebrow: '25 Minuten am See',
+    scriptLine: 'für Kinder · für Mutige',
+    title: 'Kletterwald.',
+    body: [
+      'Direkt am Ossiachersee — ein großer Kletterwald mit Parcours für jedes Alter. Halber Tag eingeplant, lange Pause am See danach.',
+    ],
+  },
+  {
+    eyebrow: '40 Minuten nach Villach',
+    scriptLine: 'wenn es regnet',
+    title: 'Therme Warmbad.',
+    body: [
+      'Eine ruhigere, alpine Therme — natürlich quellwarmes Wasser, Saunalandschaft, weniger Trubel als die größeren Häuser an der Donau.',
+      'Auch ein guter Stopp für Schlechtwettertage oder müde Beine nach langen Wanderungen.',
+    ],
+  },
+];
+---
+<Base title={title} description={description} navTransparent>
+  <!-- Hero ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="/images/hero-umgebung.jpg" alt="Weiter Blick ins Tal von Außerteuchen in der Abenddämmerung — sanft wellige Berge, Wiesen, Wald" />
+    </div>
+    <div class="hero__inner">
+      <div></div>
+      <div>
+        <h1 class="hero__title">
+          <span class="script">mitten in</span><br />
+          Kärnten.
+        </h1>
+        <div class="hero__meta">
+          <span>Umgebung · Was in der Nähe liegt</span>
+          <span>Seen · Berge · Thermen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro ──────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap--text" data-reveal>
+      <span class="eyebrow">Standort</span>
+      <p class="lead" style="margin-top: var(--space-md)">
+        Die alm44 liegt zwischen Ossiachersee und Falkertsee, am südlichen
+        Rand der Nockberge. Innerhalb einer halben Autostunde lässt sich
+        fast alles erreichen, was die Region ausmacht — ohne dass man muss.
+      </p>
+    </div>
+  </section>
+
+  <!-- Places list ─────────────────────────────────────────────────────── -->
+  <section class="section section--sm">
+    <div class="wrap">
+      <ul class="places">
+        {places.map((p) => (
+          <li class="place" data-reveal>
+            <span class="eyebrow">{p.eyebrow}</span>
+            <h3 class="place__title">
+              {p.scriptLine && <span class="script">{p.scriptLine}</span>}
+              {p.title}
+            </h3>
+            {p.body.map((line) => <p>{line}</p>)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Closing note ───────────────────────────────────────────────────── -->
+  <section class="section section--lg" style="background: var(--c-paper-soft); text-align: center;">
+    <div class="wrap--text" data-reveal>
+      <span class="script" style="font-size: clamp(2rem, 4vw + 1rem, 3.5rem); display:block;">manches darf bleiben.</span>
+      <p class="lead" style="margin-top: var(--space-md);">
+        Wer eine Liste abarbeitet, wird in Kärnten unzufrieden — wer
+        bleibt, wird belohnt. Wir helfen gerne mit konkreten Empfehlungen,
+        auch jenseits dieser Seite.
+      </p>
+      <p style="margin-top: var(--space-md);">
+        <a href="/kontakt/" class="link">Frag Annette</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .places {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg) clamp(2rem, 5vw, 4rem);
+    list-style: none;
+    padding: 0;
+  }
+  @media (max-width: 720px) {
+    .places { grid-template-columns: 1fr; gap: var(--space-md); }
+  }
+  .place {
+    border-top: 1px solid var(--c-line);
+    padding-top: var(--space-md);
+  }
+  .place__title {
+    font-size: var(--t-h3);
+    font-style: italic;
+    margin-block: var(--space-sm) var(--space-md);
+  }
+  .place__title .script {
+    display: block;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-bottom: 0.05em;
+  }
+  .place p { color: var(--c-ink-soft); }
+  .place p + p { margin-top: 0.7em; }
+</style>

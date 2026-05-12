@@ -1,0 +1,255 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Buchung & Preise — alm44 Außerteuchen';
+const description = 'Saisonpreise, Konditionen, Anfrage. Mindestaufenthalt vier Nächte. Endreinigung, Bettwäsche, Handtücher und Strom inklusive.';
+
+const seasons = [
+  { label: 'April · Mai · Oktober', low: '139',  high: '149' },
+  { label: 'Juni · September',      low: '149',  high: '159' },
+  { label: 'Juli · August',         low: '164',  high: '174' },
+];
+
+const discounts = [
+  { stay: 'ab 7 Nächten',  off: '–10 %' },
+  { stay: 'ab 10 Nächten', off: '–15 %' },
+  { stay: 'ab 14 Nächten', off: '–20 %' },
+];
+---
+<Base title={title} description={description} navTransparent>
+  <!-- Hero ───────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__media">
+      <img src="/images/hero-buchung.jpg" alt="Sonnenuntergang über der Sonnenterrasse der alm44 — Holztisch, Bank, Acapulco-Stuhl im warmen Licht" />
+    </div>
+    <div class="hero__inner">
+      <div></div>
+      <div>
+        <h1 class="hero__title">
+          <span class="script">bleib eine</span><br />
+          Weile.
+        </h1>
+        <div class="hero__meta">
+          <span>Buchung · Preise · Konditionen</span>
+          <span>Mindestaufenthalt 4 Nächte</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro ──────────────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="wrap--text" data-reveal>
+      <span class="eyebrow">Preise · Saisonen</span>
+      <p class="lead" style="margin-top: var(--space-md)">
+        Die ganze Hütte für eine Familie, eine kleine Gruppe, oder ein
+        Paar mit viel Platz. Die Preise gelten pro Nacht für die gesamte
+        Hütte — nicht pro Person.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing matrix ─────────────────────────────────────────────────── -->
+  <section class="section section--sm">
+    <div class="wrap" data-reveal>
+      <table class="table prices">
+        <thead>
+          <tr>
+            <th>Saison</th>
+            <th class="num">1 – 4 Personen</th>
+            <th class="num">5 – 6 Personen</th>
+          </tr>
+        </thead>
+        <tbody>
+          {seasons.map((s) => (
+            <tr>
+              <td>{s.label}</td>
+              <td class="num">{s.low},– €</td>
+              <td class="num">{s.high},– €</td>
+            </tr>
+          ))}
+          <tr class="prices__special">
+            <td>Sylvesterwoche</td>
+            <td class="num" colspan="2">199,– € · Mindestaufenthalt 4 Nächte</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="prices__note">
+        Endreinigung 139,– € · inklusive Bettwäsche, Handtücher und Strom<br />
+        Ortstaxe 1,10 € pro Nacht (pro Person über 18 Jahre)
+      </p>
+    </div>
+  </section>
+
+  <!-- Discounts ──────────────────────────────────────────────────────── -->
+  <section class="section section--sm">
+    <div class="wrap" data-reveal>
+      <header style="display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: var(--space-md); margin-bottom: var(--space-md);">
+        <h2 style="font-size: var(--t-h3); font-style: italic;">
+          <span class="script" style="display:block; font-size: 1.2em; line-height: 1;">je länger,</span>
+          desto günstiger.
+        </h2>
+        <span class="eyebrow">Staffelrabatte</span>
+      </header>
+      <ul class="discounts">
+        {discounts.map((d) => (
+          <li>
+            <span class="discounts__stay">{d.stay}</span>
+            <span class="discounts__off">{d.off}</span>
+          </li>
+        ))}
+        <li class="discounts__note">
+          <span>längere Aufenthalte</span>
+          <span><a href="/kontakt/" class="link">auf Anfrage</a></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Smoobu booking widget placeholder ──────────────────────────────── -->
+  <section class="section section--lg" style="background: var(--c-paper-soft);">
+    <div class="wrap" data-reveal>
+      <header style="text-align: center; margin-bottom: var(--space-lg);">
+        <span class="eyebrow">Verfügbarkeit · Direktbuchung</span>
+        <h2 style="font-size: var(--t-h2); margin-top: var(--space-sm);">
+          <span class="script" style="display:block; font-size: 1.1em;">die freien Wochen</span>
+          auf einen Blick.
+        </h2>
+      </header>
+
+      <!--
+        Smoobu booking widget will be embedded here.
+
+        TODO: Replace this placeholder with the Smoobu embed code from
+        the Smoobu dashboard (Apartments → alm44 → Online-Buchungstool / Widget).
+        Typical embed:
+
+        <div id="smoobuBookingTool"></div>
+        <script src="https://login.smoobu.com/js/Settings/BookingToolIframe.js"></script>
+        <script>
+          BookingToolIframe.initialize({
+            "url": "https://login.smoobu.com/de/booking-tool/iframe/SMOOBU_PROPERTY_ID",
+            "baseUrl": "https://login.smoobu.com",
+            "target": "#smoobuBookingTool"
+          });
+        </script>
+      -->
+      <div class="booking-placeholder">
+        <p class="eyebrow">Smoobu-Widget · folgt in Kürze</p>
+        <p style="margin-top: var(--space-md); max-width: 56ch; margin-inline: auto;">
+          Bis das Direktbuchungs-Tool eingebunden ist, schick' uns gerne
+          deine Anfrage über das Formular unten — wir antworten meist
+          noch am selben Tag.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anfrage form ───────────────────────────────────────────────────── -->
+  <section class="section section--lg">
+    <div class="wrap" style="max-width: 56rem; margin-inline: auto;" data-reveal>
+      <header style="margin-bottom: var(--space-md);">
+        <span class="eyebrow">Anfrage</span>
+        <h2 style="font-size: var(--t-h2); margin-top: var(--space-sm);">
+          <span class="script" style="display:block; font-size: 1.2em;">schreib uns</span>
+          ein paar Zeilen.
+        </h2>
+      </header>
+
+      <!--
+        Plain mailto fallback. The form opens the user's mail client
+        with prefilled subject "alm44" addressed to falkertsee13@gmx.at.
+        TODO: Optionally swap for a server-side handler (Resend, Formspree, Netlify Forms).
+      -->
+      <form
+        class="anfrage"
+        action="mailto:falkertsee13@gmx.at"
+        method="post"
+        enctype="text/plain"
+      >
+        <input type="hidden" name="Betreff" value="alm44 Anfrage" />
+        <div class="anfrage__row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="Name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="email">E-Mail</label>
+            <input id="email" name="E-Mail" type="email" required />
+          </div>
+        </div>
+        <div class="anfrage__row">
+          <div class="field">
+            <label for="anreise">Anreise</label>
+            <input id="anreise" name="Anreise" type="date" />
+          </div>
+          <div class="field">
+            <label for="abreise">Abreise</label>
+            <input id="abreise" name="Abreise" type="date" />
+          </div>
+          <div class="field">
+            <label for="personen">Personen</label>
+            <input id="personen" name="Personen" type="number" min="1" max="6" placeholder="z. B. 4" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" name="Nachricht" rows="6" placeholder="Was möchtest du wissen? Gerne mit Wunschzeitraum, Kindern, Hund, Vorlieben."></textarea>
+        </div>
+        <button type="submit" class="btn">Anfrage senden</button>
+        <p class="eyebrow" style="margin-top: var(--space-md); color: var(--c-ink-mute);">
+          oder direkt: <a href="mailto:falkertsee13@gmx.at?subject=alm44" class="link">falkertsee13@gmx.at</a>
+        </p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .prices { max-width: 64rem; margin-inline: auto; }
+  .prices th:first-child, .prices td:first-child { padding-left: 0; }
+  .prices th:last-child, .prices td:last-child { padding-right: 0; }
+  .prices__special td { color: var(--c-ink-soft); font-style: italic; }
+  .prices__note {
+    margin-top: var(--space-md);
+    font-family: var(--f-sans);
+    font-size: 0.9rem;
+    color: var(--c-ink-mute);
+    line-height: 1.7;
+    max-width: 64rem;
+    margin-inline: auto;
+  }
+
+  .discounts {
+    max-width: 64rem;
+    margin-inline: auto;
+    list-style: none;
+    padding: 0;
+  }
+  .discounts li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--c-line);
+    padding: 1em 0;
+    font-family: var(--f-serif);
+    font-size: 1.1rem;
+  }
+  .discounts__stay { color: var(--c-ink); }
+  .discounts__off  { font-variant-numeric: tabular-nums; color: var(--c-script); font-size: 1.4rem; font-style: italic; }
+  .discounts__note { color: var(--c-ink-mute); }
+  .discounts__note span { font-family: var(--f-sans); font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; }
+
+  .booking-placeholder {
+    text-align: center;
+    border: 1px dashed var(--c-line);
+    padding: clamp(2rem, 5vw, 4rem);
+    background: var(--c-paper);
+  }
+
+  .anfrage__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: clamp(1rem, 2vw, 1.6rem);
+  }
+</style>

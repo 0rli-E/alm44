@@ -1,0 +1,162 @@
+---
+// Nav.astro — quiet wordmark left, burger right, fullscreen overlay.
+const { transparent = false } = Astro.props as { transparent?: boolean };
+---
+<header class={`nav ${transparent ? 'nav--transparent' : ''}`}>
+  <a href="/" class="nav__brand" aria-label="alm44 — Startseite">
+    alm<span>44</span>
+  </a>
+  <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="primary-nav" id="navToggle">
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div class="nav__overlay" id="primary-nav" hidden>
+  <nav aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="/">Hütte</a></li>
+      <li><a href="/umgebung/">Umgebung</a></li>
+      <li><a href="/buchung/">Buchung</a></li>
+      <li><a href="/kontakt/">Kontakt</a></li>
+    </ul>
+    <div class="nav__overlay-footer">
+      <a href="https://instagram.com/_alm44_" target="_blank" rel="noopener" class="link">Instagram · _alm44_</a>
+      <span class="eyebrow">Außerteuchen 44 · 9562 Himmelberg</span>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(1rem, 2.5vw, 1.8rem) clamp(1.2rem, 4vw, 3rem);
+    color: var(--c-ink);
+    transition: background 300ms var(--ease), color 300ms var(--ease);
+  }
+  .nav--transparent { color: var(--c-cream); }
+  .nav.is-scrolled {
+    background: color-mix(in srgb, var(--c-paper) 92%, transparent);
+    color: var(--c-ink);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+  .nav__brand {
+    font-family: var(--f-serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    color: inherit;
+  }
+  .nav__brand span { font-style: normal; font-weight: 500; }
+
+  .nav__toggle {
+    width: 32px; height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: inherit;
+  }
+  .nav__toggle span {
+    display: block;
+    height: 1px;
+    background: currentColor;
+    transition: width 240ms var(--ease), transform 240ms var(--ease), opacity 240ms var(--ease);
+  }
+  .nav__toggle span:nth-child(1) { width: 100%; }
+  .nav__toggle span:nth-child(2) { width: 70%; }
+  .nav__toggle:hover span:nth-child(2) { width: 100%; }
+
+  .nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(10px) rotate(45deg); width: 100%; }
+  .nav__toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-10px) rotate(-45deg); width: 100%; }
+
+  .nav__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: var(--c-paper);
+    color: var(--c-ink);
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 480ms var(--ease);
+  }
+  .nav__overlay[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__overlay nav {
+    width: min(46rem, 92vw);
+    text-align: center;
+  }
+  .nav__overlay ul {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 1.4vw, 1rem);
+    margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  }
+  .nav__overlay li a {
+    display: inline-block;
+    font-family: var(--f-serif);
+    font-style: italic;
+    font-size: clamp(2.6rem, 7vw + 1rem, 6rem);
+    line-height: 1;
+    color: var(--c-ink);
+    transition: color 240ms var(--ease), letter-spacing 320ms var(--ease);
+  }
+  .nav__overlay li a:hover { color: var(--c-script); letter-spacing: 0.005em; }
+
+  .nav__overlay-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: center;
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+    border-top: 1px solid var(--c-line);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('navToggle')!;
+  const overlay = document.getElementById('primary-nav')!;
+  const nav = document.querySelector('.nav')!;
+
+  let open = false;
+  function setOpen(state: boolean) {
+    open = state;
+    toggle.setAttribute('aria-expanded', String(state));
+    if (state) {
+      overlay.removeAttribute('hidden');
+      // next frame for transition
+      requestAnimationFrame(() => overlay.setAttribute('data-open', 'true'));
+      document.body.style.overflow = 'hidden';
+      toggle.setAttribute('aria-label', 'Menü schließen');
+    } else {
+      overlay.setAttribute('data-open', 'false');
+      document.body.style.overflow = '';
+      toggle.setAttribute('aria-label', 'Menü öffnen');
+      // remove from a11y tree after animation
+      setTimeout(() => { if (!open) overlay.setAttribute('hidden', ''); }, 480);
+    }
+  }
+  toggle.addEventListener('click', () => setOpen(!open));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) setOpen(false); });
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+  // Subtle scroll background on nav
+  const onScroll = () => {
+    if (window.scrollY > 24) nav.classList.add('is-scrolled');
+    else nav.classList.remove('is-scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>

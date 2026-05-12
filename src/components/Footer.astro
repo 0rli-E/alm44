@@ -1,0 +1,82 @@
+---
+// Footer.astro — minimal, calm.
+const year = new Date().getFullYear();
+---
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__row">
+      <a href="/" class="foot__brand">alm<span>44</span></a>
+      <p class="script foot__line">irgendwo zwischen Bergen und Seen</p>
+    </div>
+    <div class="foot__row foot__row--meta">
+      <ul class="foot__links">
+        <li><a href="/" class="link">Hütte</a></li>
+        <li><a href="/umgebung/" class="link">Umgebung</a></li>
+        <li><a href="/buchung/" class="link">Buchung</a></li>
+        <li><a href="/kontakt/" class="link">Kontakt</a></li>
+      </ul>
+      <div class="foot__contact">
+        <span class="eyebrow">Außerteuchen 44 · AT-9562 Himmelberg</span>
+        <a class="link" href="https://instagram.com/_alm44_" target="_blank" rel="noopener">Instagram · _alm44_</a>
+      </div>
+    </div>
+    <div class="foot__legal">
+      <span class="eyebrow">© {year} alm44</span>
+      <span class="foot__legal-links">
+        <a href="/impressum/">Impressum</a>
+        <span aria-hidden="true">·</span>
+        <a href="/datenschutz/">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    background: var(--c-paper-soft);
+    color: var(--c-ink);
+    padding-block: var(--space-xl) var(--space-md);
+    border-top: 1px solid var(--c-line);
+  }
+  .foot__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    padding-block: var(--space-md);
+  }
+  .foot__brand {
+    font-family: var(--f-serif);
+    font-style: italic;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+    line-height: 1;
+    color: var(--c-ink);
+  }
+  .foot__brand span { font-style: normal; font-weight: 500; }
+  .foot__line { font-size: clamp(1.4rem, 2.5vw + 0.6rem, 2.5rem); margin-bottom: 0.3em; }
+
+  .foot__row--meta {
+    border-top: 1px solid var(--c-line);
+    border-bottom: 1px solid var(--c-line);
+    align-items: start;
+    padding-block: var(--space-md);
+  }
+  .foot__links { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+  .foot__contact { display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem; text-align: right; }
+  @media (max-width: 640px) {
+    .foot__contact { align-items: flex-start; text-align: left; }
+  }
+
+  .foot__legal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    color: var(--c-ink-mute);
+  }
+  .foot__legal-links { display: flex; gap: 0.7rem; align-items: center; font-family: var(--f-sans); font-size: var(--t-eyebrow); letter-spacing: 0.18em; text-transform: uppercase; }
+  .foot__legal-links a { color: var(--c-ink-mute); transition: color 200ms var(--ease); }
+  .foot__legal-links a:hover { color: var(--c-ink); }
+</style>
