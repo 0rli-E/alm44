@@ -10,13 +10,13 @@
 /* Tokens ───────────────────────────────────────────────────────────── */
 :root {
   /* Palette — pulled from the flyer */
-  --c-paper:        #D9CDC1;   /* warm taupe paper background */
-  --c-paper-soft:   #E4DBD0;   /* lighter card / panel */
-  --c-paper-deep:   #C7B9AC;   /* slightly deeper edge */
+  --c-paper:        #EFE7DC;   /* warm taupe paper background */
+  --c-paper-soft:   #F6F0E6;   /* lighter card / panel */
+  --c-paper-deep:   #D9CDC1;   /* slightly deeper edge */
   --c-ink:          #2A211B;   /* dark wood, body text */
   --c-ink-soft:     #5C4D43;   /* muted body */
-  --c-ink-mute:     #8B7A6E;   /* labels, captions */
-  --c-script:       #A8907A;   /* warm script brown */
+  --c-ink-mute:     #6B5C50;   /* labels, captions */
+  --c-script:       #7B5F46;   /* warm script brown */
   --c-rose:         #B89A8E;   /* soft accent rose */
   --c-cream:        #F4ECE2;   /* off-white */
   --c-line:         rgba(42, 33, 27, 0.14);
