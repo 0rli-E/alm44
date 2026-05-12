@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
+// Site URL: used for canonical/sitemap. Adjust to your final domain.
+const site = process.env.ASTRO_SITE || 'https://alm44.pages.dev';
+
 export default defineConfig({
-  site: 'https://alm44.pages.dev', // TODO: swap for final custom domain
+  site,
   integrations: [sitemap()],
-  build: {
-    inlineStylesheets: 'auto',
-  },
+  build: { inlineStylesheets: 'auto' },
 });
