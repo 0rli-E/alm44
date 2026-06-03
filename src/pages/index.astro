@@ -2,108 +2,108 @@
 import Base from '../layouts/Base.astro';
 import Scene from '../components/Scene.astro';
 
-const title = 'alm44 — kleine Hütte mit großem Blick · Außerteuchen, Kärnten';
-const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes Quellwasser, Feuerschale, Sonnenterrasse. Mitten in Kärnten zwischen Seen und Bergen.';
+const title = 'alm44 — eine Almhütte in Außerteuchen, Kärnten';
+const description = 'Eine Almhütte, neu erzählt. Drei Schlafzimmer, sechs Betten, frisch renoviert. Mitten in Kärnten zwischen Seen und Bergen.';
 ---
 <Base title={title} description={description} navTransparent>
-  <!-- Hero ─────────────────────────────────────────────────────────── -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero__media">
       <img src="/images/hero-home.jpg" alt="Sonnenuntergang von der Terrasse der alm44 — goldenes Tal, Kärntner Berge im Hintergrund" />
     </div>
     <div class="hero__inner">
       <div></div>
-      <div>
-        <h1 class="hero__title">
-          <span class="script">Eine kleine Hütte</span><br />
-          mit großem Blick.
-        </h1>
+      <div class="hero__bottom">
+        <div class="hero__brand-large">alm<span>44</span></div>
         <div class="hero__meta">
-          <span>alm44 · Außerteuchen · Kärnten</span>
+          <span>Außerteuchen · Kärnten</span>
           <span>Alpen meets Boho</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Intro ────────────────────────────────────────────────────────── -->
+  <!-- Intro -->
   <section class="section">
-    <div class="wrap--text" data-reveal>
-      <span class="eyebrow">Willkommen</span>
-      <p class="lead" style="margin-top: var(--space-md)">
-        Eine alte Almhütte, frisch renoviert. Drei Schlafräume, sechs Betten,
-        ein kleines feines Retrobad. Draußen eine große Sonnenterrasse, ein
-        Garten mit eigenem Quellwasser, eine Feuerschale für lange Abende.
+    <div class="wrap--text intro" data-reveal>
+      <p class="intro__lead">Eine Almhütte, neu erzählt.</p>
+      <p>
+        Drei Schlafzimmer, sechs Betten, frisch renoviert. Design trifft auf
+        handbemalte Möbel und warme Materialien – irgendwo zwischen Alm und
+        Boho-Retreat.
       </p>
-      <p style="margin-top: 1.2em">
-        Die alm44 liegt am Berg über Außerteuchen, oberhalb des Ossiachersees —
-        hoch genug, dass die Tage langsamer werden, aber nah genug, dass die
-        Karawanken und die Kärntner Seen in einer halben Stunde erreichbar sind.
-        Ein Ort zum Auftauchen, nicht zum Abhaken.
+      <p>
+        Draußen eine große Sonnenterrasse, ein wilder Garten mit genug Platz
+        für lange Sommertage und Abende unter Sternen.
       </p>
+
+      <hr class="divider intro__divider" />
+
+      <p>
+        Die alm44 liegt am Berg, mit weitem Blick über die sanften Hügel
+        Kärntens bis zu den Gipfeln der Karawanken. Ein Ort, an dem man
+        morgens barfuß ins Gras tritt, nach dem Wandern ins kalte Wasser
+        taucht und abends an der Feuerschale sitzt, während langsam Nebel
+        durch die Täler zieht.
+      </p>
+      <p>
+        Nah genug für einen Sprung an den Ossiachersee. Weit genug weg,
+        damit die Tage wieder langsamer werden.
+      </p>
+      <p class="intro__close"><em>Ein Ort zum Auftauchen, nicht zum Abhaken.</em></p>
     </div>
   </section>
 
-  <!-- Wohnen ───────────────────────────────────────────────────────── -->
+  <!-- Hütte scenes -->
   <div class="wrap">
     <Scene
       src="/images/wohnen-kachelofen.jpg"
       alt="Kachelofen mit Schaffell-Schaukelstuhl und bemalter Bauerntür im Wohnraum der alm44"
       eyebrow="Wohnen"
-      scriptLine="der Ofen"
-      title="der Mittelpunkt der Stube."
-      caption="Glasierte Kacheln, Schaffell, Eames-Rocker"
+      title="im Mittelpunkt."
       reverse
     >
       <p>
-        Im Zentrum der Hütte steht ein alter Kachelofen — glasiert, schwer,
-        stillschweigend warm. Davor ein Schaukelstuhl mit Schaffell, daneben
-        eine bemalte Bauerntür, die irgendwann in einem anderen Leben
-        irgendwo anders gehängt hat.
+        Wenn draußen langsam Nebel über die Hügel zieht und der Abend kühl
+        wird, ist das hier der Ort zum Ankommen.
       </p>
       <p>
-        Wenn es draußen kühl wird, ist das hier der Platz, an den man
-        zurückkehrt — mit einem Buch, einem Glas, oder einfach mit dem
-        Geräusch des Holzes.
+        Im Schaukelstuhl vor dem alten Kachelofen, mit einem Buch auf den
+        Knien, einem Glas Wein in der Hand und dem leisen Knacken des Holzes
+        im Hintergrund.
       </p>
     </Scene>
 
     <Scene
       src="/images/stube.jpg"
-      alt="Esstisch mit alten Bauernstühlen, Bank und kleinen Stillleben in der Stube der alm44"
+      alt="Alter Bauerntisch mit Stillleben und Pendelleuchte in der Stube der alm44"
       eyebrow="Stube"
       title="ein Tisch, an dem man bleibt."
     >
+      <p>Der Tisch hat Geschichten gesehen.</p>
       <p>
-        Der Tisch ist alt, das Holz dunkel, an den Wänden hängen kleine
-        Stillleben. Eine schwarze Pendelleuchte über dem Ganzen.
-      </p>
-      <p>
-        Hier werden lange Frühstücke serviert, Karten gespielt, Gespräche
-        geführt, die sonst keinen Platz finden.
+        Hier ziehen sich Frühstücke bis in den Nachmittag. Es wird gegessen,
+        gespielt, gelacht und manchmal stundenlang geredet — über Dinge, für
+        die im Alltag oft kein Platz bleibt.
       </p>
     </Scene>
 
     <Scene
       src="/images/kueche.jpg"
-      alt="Schwarze Küchenzeile mit Induktion und Backofen, alter Bauernregal mit Geschirr im Hintergrund"
+      alt="Schwarze Küchenzeile mit altem Bauernregal, Wandlampen und Krug voller Wiesenblumen"
       eyebrow="Küche"
-      scriptLine="alt trifft neu"
-      title="kochen, in Ruhe."
+      title="Kochen mit Weitblick."
       reverse
     >
       <p>
-        Die Küche ist neu, sachlich, schwarz — Induktion, Backofen,
-        Filterkaffee. Über der Anrichte: ein altes Wandregal mit bemaltem
-        Geschirr und einem Krug voll Wiesenblumen.
-      </p>
-      <p>
-        Klein, aber fein. Genug für lange Frühstücke, kurze Abendessen und
-        alles dazwischen.
+        Eine Küche für langsame Morgen mit frischem Kaffee, für leckere
+        Abendessen nach einem langen Tag draußen und für dieses angenehme
+        Gefühl, gemeinsam zu kochen, während irgendwo Musik läuft und das
+        Fenster noch offen steht.
       </p>
     </Scene>
 
-    <!-- Pull quote ─────────────────────────────────────────────────── -->
+    <!-- Pull quote -->
     <div class="pullquote" data-reveal>
       <span class="script">Alpen meets Boho</span>
       <p class="eyebrow" style="margin-top: var(--space-sm)">mit Retroflair</p>
@@ -113,49 +113,45 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
       src="/images/schlafen-doppelbett.jpg"
       alt="Doppelbett mit Leinenbezug, Bauernbild und Reispapierlampe im Hauptschlafzimmer der alm44"
       eyebrow="Schlafen · 1"
-      title="Drei Räume, sechs Betten."
+      title="Raum zum Träumen."
     >
+      <p>Aufwachen mit Blick auf die Karawanken.</p>
       <p>
-        Drei Schlafzimmer auf zwei Etagen — ein Doppelbett im warmen
-        Hauptschlafzimmer, ein Stockbett für die Kinder oder die jungen
-        Gebliebenen, und ein Ausziehbett im Atelierzimmer mit der bemalten
-        Truhe.
-      </p>
-      <p>
-        Bettwäsche, Leinen, dichte Vorhänge, Morgensonne durchs kleine
-        Fenster. Mehr braucht es nicht.
+        Die ersten Sonnenstrahlen auf den Gipfeln, Nebelschwaden in den
+        Tälern und das Gefühl, nirgendwo sein zu müssen. Ein Zimmer für
+        alle, die morgens gerne noch einen Moment länger liegen bleiben.
       </p>
     </Scene>
 
     <Scene
       src="/images/schlafen-truhe.jpg"
-      alt="Bemalte Bauerntruhe mit Olympia-Schreibmaschine und kleiner Rosenstillleben in einem Schlafraum"
+      alt="Ruhiges Schlafzimmer mit Einzelbett, weichem Vorhang und einem Blick ins Grüne"
       eyebrow="Schlafen · 2"
-      scriptLine="kleine Schätze"
-      title="alte Möbel, neue Geschichten."
+      title="Ein Platz für Ruhe."
       reverse
     >
       <p>
-        Eine bemalte Bauerntruhe, eine alte Olympia-Schreibmaschine, ein
-        Stillleben mit Rosen — die Räume sind nicht gestylt, sie sind
-        gewachsen.
+        Ein ruhiger Rückzugsort mit Blick ins Grüne. Perfekt für eine
+        Person, genauso gemütlich für zwei.
       </p>
       <p>
-        Vieles in der Hütte hat schon einmal woanders gelebt, bevor es
-        hier seinen Platz fand.
+        Ein Zimmer für lange Nächte nach Tagen voller Bergluft,
+        Sonnenstunden und Lagerfeuerabenden.
       </p>
     </Scene>
 
     <Scene
       src="/images/schlafen-stockbett.jpg"
-      alt="Stockbett mit hellem Holzgestell und alter Bauernstuhl im Kinderzimmer der alm44"
+      alt="Blick ins Stockbettzimmer mit hellem Holzgestell und altem Bauernstuhl"
       eyebrow="Schlafen · 3"
       title="ein Stockbett mit Aussicht."
     >
       <p>
-        Im dritten Raum ein Stockbett — Holz, hell, mit einem alten
-        Bauernstuhl daneben und einem Fenster ins Grüne.
+        Manche Erinnerungen entstehen genau in solchen Zimmern: beim
+        heimlichen Kichern nach dem Schlafengehen, beim Lesen mit
+        Taschenlampe oder beim ersten Blick aus dem Fenster am Morgen.
       </p>
+      <p>Klein, gemütlich und gemacht für gemeinsame Ferien.</p>
     </Scene>
 
     <Scene
@@ -167,16 +163,17 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
       reverse
     >
       <p>
-        Ein einziges Bad, klein, mit Charakter — gemusterte Wandfliesen,
-        Terrakottaboden, Steinwaschbecken, runder Holzspiegel.
+        Die originalen Fliesen aus den 1960er-Jahren durften bleiben. Alles
+        andere wurde behutsam erneuert.
       </p>
       <p>
-        Genug für sechs Menschen, wenn man freundlich teilt.
+        So verbindet das kleinste Zimmer der Hütte Retrocharme mit modernem
+        Komfort – und erzählt ganz nebenbei ein Stück ihrer Geschichte.
       </p>
     </Scene>
   </div>
 
-  <!-- Outdoor section ───────────────────────────────────────────────── -->
+  <!-- Outdoor -->
   <section class="section section--lg" style="background: var(--c-paper-soft);">
     <div class="wrap">
       <header class="section__header" style="text-align: center; margin-bottom: var(--space-lg);" data-reveal>
@@ -189,17 +186,15 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
 
       <Scene
         src="/images/terrasse.jpg"
-        alt="Sonnenterrasse mit Holzdach, Blick über das goldene Tal bei Sonnenuntergang"
+        alt="Ein stiller Ort mit Tageslicht auf der alm44"
         eyebrow="Terrasse"
-        title="ein Platz für lange Abende."
+        title="Der beste Platz."
       >
         <p>
-          Die große Sonnenterrasse blickt nach Süden — über die Wälder von
-          Außerteuchen hinweg, an klaren Tagen bis zu den Karawanken.
-        </p>
-        <p>
-          Esstisch unter dem Holzdach, Bank, ein Acapulco-Stuhl. Frühstück
-          in der Morgensonne, Wein zum Abendrot.
+          Man kommt für die Hütte und bleibt für die Terrasse. Für lange
+          Sommerabende, gemeinsame Mahlzeiten unter freiem Himmel und
+          diesen Blick, der nie ganz alltäglich wird – egal, wie oft man
+          ihn sieht.
         </p>
       </Scene>
 
@@ -209,7 +204,6 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
         eyebrow="Feuerschale"
         scriptLine="Lagerfeuerromantik"
         title="wenn der Tag leiser wird."
-        caption="Holz, Feuer, Berge. In der Reihenfolge."
         reverse
       >
         <p>
@@ -253,7 +247,7 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
     </div>
   </section>
 
-  <!-- Atelier teaser ────────────────────────────────────────────────── -->
+  <!-- Atelier teaser -->
   <section class="section">
     <div class="wrap--text" data-reveal style="text-align: center;">
       <span class="eyebrow">Neu ab Juni 2026</span>
@@ -269,7 +263,7 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
     </div>
   </section>
 
-  <!-- Detail mood gallery ────────────────────────────────────────────── -->
+  <!-- Detail mood gallery -->
   <section class="section section--sm">
     <div class="wrap--wide" data-reveal>
       <div class="gallery">
@@ -281,7 +275,7 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
     </div>
   </section>
 
-  <!-- CTA ─────────────────────────────────────────────────────────────── -->
+  <!-- CTA -->
   <section class="section section--lg" style="text-align: center;">
     <div class="wrap--text" data-reveal>
       <span class="script" style="font-size: clamp(2.5rem, 5vw + 1rem, 5rem); display: block;">bleib eine Weile.</span>
@@ -296,3 +290,46 @@ const description = 'Frisch renoviert. Drei Schlafräume, sechs Betten. Eigenes 
     </div>
   </section>
 </Base>
+
+<style is:global>
+  .hero__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1.5vw, 1.4rem);
+  }
+  .hero__brand-large {
+    font-family: var(--f-serif);
+    font-style: italic;
+    font-size: clamp(4.5rem, 13vw + 1rem, 12rem);
+    line-height: 0.85;
+    color: #C9A88A;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.55), 0 2px 18px rgba(0,0,0,0.55), 0 4px 40px rgba(0,0,0,0.45);
+    letter-spacing: -0.02em;
+  }
+  .hero__brand-large span {
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero .hero__meta {
+    font-size: 0.85rem;
+    letter-spacing: 0.22em;
+  }
+  @media (max-width: 640px) {
+    .hero .hero__meta { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+  }
+
+  .intro__lead {
+    font-style: italic;
+    font-size: clamp(1.4rem, 1vw + 1.1rem, 1.9rem);
+    color: var(--c-ink);
+    margin-bottom: var(--space-md);
+  }
+  .intro p { color: var(--c-ink-soft); line-height: 1.65; }
+  .intro p + p { margin-top: 1em; }
+  .intro__divider { margin-block: var(--space-lg); }
+  .intro__close {
+    font-style: italic;
+    color: var(--c-ink);
+    margin-top: var(--space-md);
+  }
+</style>
