@@ -1,25 +1,25 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const title = 'Kontakt — alm44 · Annette Payr';
-const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Außerteuchen 44, 9562 Himmelberg, Kärnten.';
+const title = 'Kontakt — alm44 · Julia und Herbert';
+const description = 'Direkter Kontakt zu Julia und Herbert, den Hüttenbetreuern der alm44. Telefon, E-Mail, Standort. Außerteuchen 44, 9562 Himmelberg, Kärnten.';
 ---
 <Base title={title} description={description} navTransparent>
   <!-- Hero ───────────────────────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero__media">
-      <img src="/images/hero-kontakt.jpg" alt="Bank vor der Feuerschale auf der Wiese mit Blick ins Tal" />
+      <img src="/images/hero-kontakt.jpg" alt="Schlafzimmer-Ecke der alm44 mit Wandbild und warmer Abendlicht" />
     </div>
     <div class="hero__inner">
       <div></div>
       <div>
-        <h1 class="hero__title">
+        <h1 class="hero__title hero__title--logo-color">
           <span class="script">sag</span><br />
           Hallo.
         </h1>
         <div class="hero__meta">
           <span>Kontakt · Standort</span>
-          <span>Annette Payr</span>
+          <span>Julia und Herbert · Hüttenbetreuer</span>
         </div>
       </div>
     </div>
@@ -31,21 +31,21 @@ const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Au�
       <div data-reveal>
         <span class="eyebrow">Direkt</span>
         <h2 class="kontakt__heading">
-          <span class="script">an Annette,</span><br />
-          die hier wohnt.
+          <span class="script">an Julia und Herbert,</span><br />
+          die Hüttenbetreuer.
         </h2>
         <dl class="kontakt__list">
           <div>
             <dt>Name</dt>
-            <dd>Annette Payr</dd>
+            <dd>Julia und Herbert</dd>
           </div>
           <div>
             <dt>E-Mail</dt>
-            <dd><a href="mailto:falkertsee13@gmx.at?subject=alm44" class="link">falkertsee13@gmx.at</a></dd>
+            <dd><a href="mailto:alm44@gmx.at?subject=alm44" class="link">alm44@gmx.at</a></dd>
           </div>
           <div>
             <dt>Telefon</dt>
-            <dd><a href="tel:+4917672126684" class="link">+49 176 72126684</a></dd>
+            <dd><a href="tel:+436643458434" class="link">+43 664 3458434</a></dd>
           </div>
           <div>
             <dt>Instagram</dt>
@@ -54,8 +54,7 @@ const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Au�
         </dl>
         <p class="kontakt__hint">
           Gib bei deiner Anfrage gerne den gewünschten Zeitraum, die Anzahl
-          der Personen und besondere Wünsche an. Antwort meist am selben
-          oder am nächsten Tag.
+          der Personen und besondere Wünsche an.
         </p>
       </div>
 
@@ -66,7 +65,7 @@ const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Au�
           AT-9562 Himmelberg.
         </h2>
         <p class="kontakt__lead">
-          Mitten in Kärnten, oberhalb des Ossiachersees, am südlichen
+          Mitten in Kärnten, in der Nähe des Ossiachersees, am südlichen
           Rand der Nockberge.
         </p>
         <p style="margin-top: var(--space-md);">
@@ -76,9 +75,10 @@ const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Au�
           >In Karten öffnen</a>
         </p>
         <p class="kontakt__hint" style="margin-top: var(--space-md);">
-          Die Anreise ist mit dem Auto gut machbar. Die letzte Strecke ist
-          ein Bergweg — bei Schnee empfehlen wir gute Reifen oder Ketten.
-          Detaillierte Anfahrtsbeschreibung schicken wir vor der Buchung.
+          Die Anreise ist mit dem Auto gut machbar. Die letzten 50 m sind
+          ein steiler Schotterweg — bei Schnee empfehlen wir gute Reifen
+          oder Allrad. Eine detaillierte Anfahrtsbeschreibung schicken
+          wir vor der Anreise.
         </p>
       </div>
     </div>
@@ -87,10 +87,15 @@ const description = 'Direkter Kontakt zu Annette. Telefon, E-Mail, Standort. Au�
   <!-- Closing line ───────────────────────────────────────────────────── -->
   <section class="section" style="text-align: center; background: var(--c-paper-soft); padding-block: var(--space-lg);">
     <div class="wrap--text" data-reveal>
-      <span class="script" style="font-size: clamp(2rem, 4vw + 1rem, 3.5rem); display:block;">bis bald oben.</span>
+      <span class="script" style="font-size: clamp(2rem, 4vw + 1rem, 3.5rem); display:block;">bis bald in Kärnten.</span>
     </div>
   </section>
 </Base>
+
+<style is:global>
+  .hero__title--logo-color,
+  .hero__title--logo-color .script { color: #C9A88A; }
+</style>
 
 <style>
   .kontakt {

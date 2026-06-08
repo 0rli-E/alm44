@@ -25,7 +25,7 @@ const discounts = [
     <div class="hero__inner">
       <div></div>
       <div>
-        <h1 class="hero__title">
+        <h1 class="hero__title hero__title--logo-color">
           <span class="script">bleib eine</span><br />
           Weile.
         </h1>
@@ -44,7 +44,7 @@ const discounts = [
       <p class="lead" style="margin-top: var(--space-md)">
         Die ganze Hütte für eine Familie, eine kleine Gruppe, oder ein
         Paar mit viel Platz. Die Preise gelten pro Nacht für die gesamte
-        Hütte — nicht pro Person.
+        Hütte. Der Mindestaufenthalt beträgt 4 Nächte.
       </p>
     </div>
   </section>
@@ -68,9 +68,10 @@ const discounts = [
               <td class="num">{s.high},– €</td>
             </tr>
           ))}
-          <tr class="prices__special">
+          <tr>
             <td>Sylvesterwoche</td>
-            <td class="num" colspan="2">199,– € · Mindestaufenthalt 4 Nächte</td>
+            <td class="num">179,– €</td>
+            <td class="num">189,– €</td>
           </tr>
         </tbody>
       </table>
@@ -138,8 +139,7 @@ const discounts = [
         <p class="eyebrow">Smoobu-Widget · folgt in Kürze</p>
         <p style="margin-top: var(--space-md); max-width: 56ch; margin-inline: auto;">
           Bis das Direktbuchungs-Tool eingebunden ist, schick' uns gerne
-          deine Anfrage über das Formular unten — wir antworten meist
-          noch am selben Tag.
+          deine Anfrage über das Formular unten.
         </p>
       </div>
     </div>
@@ -158,12 +158,12 @@ const discounts = [
 
       <!--
         Plain mailto fallback. The form opens the user's mail client
-        with prefilled subject "alm44" addressed to falkertsee13@gmx.at.
+        with prefilled subject "alm44" addressed to alm44@gmx.at.
         TODO: Optionally swap for a server-side handler (Resend, Formspree, Netlify Forms).
       -->
       <form
         class="anfrage"
-        action="mailto:falkertsee13@gmx.at"
+        action="mailto:alm44@gmx.at"
         method="post"
         enctype="text/plain"
       >
@@ -198,12 +198,17 @@ const discounts = [
         </div>
         <button type="submit" class="btn">Anfrage senden</button>
         <p class="eyebrow" style="margin-top: var(--space-md); color: var(--c-ink-mute);">
-          oder direkt: <a href="mailto:falkertsee13@gmx.at?subject=alm44" class="link">falkertsee13@gmx.at</a>
+          oder direkt: <a href="mailto:alm44@gmx.at?subject=alm44" class="link">alm44@gmx.at</a>
         </p>
       </form>
     </div>
   </section>
 </Base>
+
+<style is:global>
+  .hero__title--logo-color,
+  .hero__title--logo-color .script { color: #C9A88A; }
+</style>
 
 <style>
   .prices { max-width: 64rem; margin-inline: auto; }

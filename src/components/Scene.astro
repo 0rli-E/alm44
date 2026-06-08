@@ -6,12 +6,13 @@ interface Props {
   alt: string;
   eyebrow?: string;
   scriptLine?: string;
+  scriptSize?: 'sm' | 'md';
   title: string;
   caption?: string;
   reverse?: boolean;
   reveal?: boolean;
 }
-const { src, alt, eyebrow, scriptLine, title, caption, reverse = false, reveal = true } = Astro.props;
+const { src, alt, eyebrow, scriptLine, scriptSize, title, caption, reverse = false, reveal = true } = Astro.props;
 ---
 <section class={`scene ${reverse ? 'scene--reverse' : ''}`} data-reveal={reveal ? '' : null}>
   <figure class="scene__media">
@@ -20,7 +21,7 @@ const { src, alt, eyebrow, scriptLine, title, caption, reverse = false, reveal =
   </figure>
   <div class="scene__body">
     {eyebrow && <span class="eyebrow">{eyebrow}</span>}
-    <h2 class="scene__title">
+    <h2 class={`scene__title${scriptSize === 'sm' ? ' scene__title--script-sm' : ''}`}>
       {scriptLine && <span class="script">{scriptLine}</span>}
       {title}
     </h2>
