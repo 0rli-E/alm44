@@ -77,7 +77,7 @@ const places = [
           Kärnten.
         </h1>
         <div class="hero__meta">
-          <span>Umgebung · Was in der Nähe liegt</span>
+          <span></span>
           <span>Seen · Berge · Thermen</span>
         </div>
       </div>
@@ -122,7 +122,7 @@ const places = [
   <!-- Image strip ────────────────────────────────────────────────────── -->
   <section class="section section--sm">
     <div class="wrap--wide" data-reveal>
-      <div class="gallery gallery--three">
+      <div class="gallery gallery--three gallery--three-keep">
         <img src="/images/umgebung-1.jpg" alt="Berg, See und Wolken in Kärnten" />
         <img src="/images/umgebung-2.jpg" alt="Wiesen, Wälder und nebelverhangene Berge in Kärnten" />
         <img src="/images/umgebung-3.jpg" alt="Bergpanorama der Nockberge im Winter" />
@@ -150,6 +150,21 @@ const places = [
 </style>
 
 <style>
+  /* Bilderreihe immer 3-spaltig und zentriert — auch in der mobilen Ansicht. */
+  .gallery--three-keep {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 980px;
+    margin-inline: auto;
+    justify-content: center;
+    gap: clamp(0.4rem, 1.4vw, 1.2rem);
+  }
+  .gallery--three-keep img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
   .places {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
