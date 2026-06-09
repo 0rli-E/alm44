@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+
+const title = 'Danke — alm44';
+const description = 'Vielen Dank für deine Anfrage. Wir melden uns so schnell wie möglich bei dir zurück.';
+---
+<Base title={title} description={description}>
+  <section class="section section--lg" style="text-align: center;">
+    <div class="wrap--text" data-reveal>
+      <span class="eyebrow">Anfrage erhalten</span>
+      <h1 style="font-size: var(--t-h1); margin-top: var(--space-sm);">
+        <span class="script" style="display:block; font-size: 1.1em; line-height: 1; color: #C9A88A;">vielen Dank.</span>
+      </h1>
+
+      <p class="lead" style="margin-top: var(--space-md);">
+        Wir haben deine Anfrage erhalten und melden uns so schnell wie
+        möglich bei dir zurück — meistens innerhalb eines Tages.
+      </p>
+
+      <p style="margin-top: var(--space-md); color: var(--c-ink-soft);">
+        Schau in der Zwischenzeit gerne noch ein bisschen um, oder
+        spring zurück auf die Startseite.
+      </p>
+
+      <p style="margin-top: var(--space-lg); display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn">zur Startseite</a>
+        <a href="/umgebung/" class="btn btn--ghost">Umgebung</a>
+      </p>
+    </div>
+  </section>
+</Base>

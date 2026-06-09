@@ -159,22 +159,17 @@ const discounts = [
       </header>
 
       <!--
-        Anfrageformular über Formsubmit.co.
-        Bei der ersten Einsendung schickt Formsubmit eine Bestätigungs-E-Mail
-        an alm44@gmx.at — den Link darin einmal anklicken, danach landen alle
-        weiteren Anfragen direkt im Postfach.
-        Das Feld name="email" wird automatisch als Reply-To gesetzt, sodass
-        Antworten direkt an die Absenderin / den Absender gehen.
+        Anfrageformular — POSTet an /api/contact (Cloudflare Pages Function).
+        Die Function liegt unter functions/api/contact.js und versendet die
+        Mail server-seitig via Resend an alm44@gmx.at.
+        Reply-To wird auf das E-Mail-Feld unten gesetzt, eine Antwort aus
+        dem GMX-Postfach geht damit direkt an die absendende Person.
       -->
       <form
         class="anfrage"
-        action="https://formsubmit.co/alm44@gmx.at"
+        action="/api/contact"
         method="POST"
       >
-        <input type="hidden" name="_subject" value="Neue Anfrage über alm44.at" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_autoresponse" value="Vielen Dank für deine Anfrage an die alm44. Wir melden uns so schnell wie möglich bei dir. — Julia und Herbert" />
         <!-- Honeypot gegen Bots -->
         <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px;" aria-hidden="true" />
 
