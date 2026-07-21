@@ -64,10 +64,10 @@ These are marked as `TODO` in the code where they apply.
 - **Smoobu booking widget** — `src/pages/buchung.astro` has a
   placeholder block with the standard Smoobu embed snippet commented
   in. Drop in the actual `SMOOBU_PROPERTY_ID` once the Smoobu apartment
-  is set up. Until then, the Anfrage form below it works as fallback —
-  it opens the user's mail client with `mailto:falkertsee13@gmx.at`.
-- **Domain** — `astro.config.mjs` has `site: 'https://alm44.at'`.
-  Update once the final domain is decided.
+  is set up. Until then the Anfrage form below it is the fallback — it
+  POSTs to `/api/contact` and sends mail via Resend (see Deploying).
+- **Domain** — `alm44.at` is set in `astro.config.mjs` but not yet
+  attached to the Cloudflare Pages project. See Deploying → Domain.
 - **Photo selection** — `public/images/` is a first pass. Swap any
   filename with another from `Alm44/` to change the photo for that
   slot. File names are semantic (e.g. `kueche.jpg`, `bad.jpg`) so
@@ -123,17 +123,40 @@ follows.
 
 ## Deploying
 
-The site is fully static — `npm run build` outputs `dist/` which can
-be hosted free anywhere:
+**The site runs on Cloudflare Pages.** It is live at
+`https://alm44.pages.dev`. Deploys happen automatically: push to
+`main` on GitHub, Cloudflare builds and publishes.
 
-- **Netlify** — drag `dist/` into the Netlify dashboard, or connect
-  the git repo for auto-deploys
-- **Vercel** — same idea
-- **Cloudflare Pages** — same idea, particularly fast in Europe
+The site is *almost* static, with one exception that determines the
+host: `functions/api/contact.js` is a **Cloudflare Pages Function**
+that handles the Anfrage form. Plain static hosting (an FTP upload of
+`dist/` to All-inkl, a Netlify drag-and-drop, Vercel) would serve the
+pages fine but **silently break the contact form** — the POST to
+`/api/contact` would 404. Do not move the site off Cloudflare Pages
+without replacing that endpoint first.
 
-For domain pointing, follow the host's docs. The site has a
-`@astrojs/sitemap` integration that generates `sitemap-index.xml`
-automatically once `site:` in `astro.config.mjs` matches the live URL.
+### Required Cloudflare setting
+
+The Function needs one environment variable in the Pages project
+(Settings → Environment variables, Production):
+
+- `RESEND_API_KEY` — from resend.com/api-keys
+
+Optional: `MAIL_TO` (default `alm44@gmx.at`), `MAIL_FROM`.
+
+Without `RESEND_API_KEY` the form responds with a 503 and a message
+asking the visitor to mail directly. **Send a test enquiry after any
+deploy that touches the form.**
+
+### Domain
+
+`site:` in `astro.config.mjs` is set to `https://alm44.at`. Canonical
+tags and `sitemap-index.xml` follow it. The domain still has to be
+attached to the Pages project as a Custom Domain, and its nameservers
+pointed at Cloudflare. Until that is done the live site remains
+reachable only at `alm44.pages.dev` — where the canonical tags will
+point at `alm44.at`. That is intentional and harmless short-term, but
+finish the domain switch rather than leaving it half-done.
 
 ---
 
