@@ -150,13 +150,16 @@ deploy that touches the form.**
 
 ### Domain
 
-`site:` in `astro.config.mjs` is set to `https://alm44.at`. Canonical
-tags and `sitemap-index.xml` follow it. The domain still has to be
-attached to the Pages project as a Custom Domain, and its nameservers
-pointed at Cloudflare. Until that is done the live site remains
-reachable only at `alm44.pages.dev` — where the canonical tags will
-point at `alm44.at`. That is intentional and harmless short-term, but
-finish the domain switch rather than leaving it half-done.
+`alm44.at` is live and attached to the Pages project. `site:` in
+`astro.config.mjs` is set to `https://alm44.at` to match, so canonical
+tags, `og:url`, `og:image` and `sitemap-index.xml` all point at the real
+domain.
+
+Before this was set, the site served on `alm44.at` while declaring
+`https://alm44.pages.dev/` as its canonical URL — telling search engines
+the authoritative copy lived on the preview domain, and making shared
+link previews resolve to pages.dev. If you ever change the domain, change
+`site:` in the same commit.
 
 ---
 
